@@ -66,12 +66,12 @@
 		4357FF4A27A85ABF00870FEE /* MVVM Network Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				4357FF4B27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift */,
 				432FDE6427A938DE00E43B35 /* MVVM-Network-Test-Project-Info.plist */,
 				432FDE6127A9329800E43B35 /* View Model */,
 				4357FF5C27A85B8400870FEE /* Service */,
 				4357FF5927A85AC800870FEE /* Model */,
-				4357FF4B27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift */,
-				4357FF4D27A85AC000870FEE /* ContentView.swift */,
+				4364DF7027A966A20025A94B /* View */,
 				4357FF4F27A85AC000870FEE /* Assets.xcassets */,
 				4357FF5127A85AC000870FEE /* Preview Content */,
 			);
@@ -100,6 +100,14 @@
 				4357FF5D27A85B9C00870FEE /* Service.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		4364DF7027A966A20025A94B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4357FF4D27A85AC000870FEE /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

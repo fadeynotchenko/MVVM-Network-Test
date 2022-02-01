@@ -20,9 +20,19 @@ struct ContentView: View {
             case .success(let data):
                 List {
                     ForEach(data, id: \.id) { item in
-                        VStack {
+                        HStack {
+                            AsyncImage(url: URL(string: item.image), scale: 2.0) { image in
+                                image
+                            } placeholder: {
+                                Image(systemName: "photo")
+                                    .scaledToFit()
+                                    .frame(width: 200, height: 200)
+                                    .clipped()
+                            }
                             Text("\(item.name)")
                         }
+                        .padding()
+                        
                     }
                 }
                 .navigationTitle("Characters")
@@ -36,6 +46,19 @@ struct ContentView: View {
             
         }.task {
             await viewModel.getUniversity()
+        }
+        .alert("Erorr", isPresented: $viewModel.hasErrors, presenting: viewModel.state) { detail in
+            
+            Button("Retry") {
+                Task {
+                    await viewModel.getUniversity()
+                }
+            }
+            
+        } message: { detail in
+            if case let .failed(error) = detail {
+                Text(error.localizedDescription)
+            }
         }
     }
 }

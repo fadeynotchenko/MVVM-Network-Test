@@ -17,7 +17,8 @@ struct Service {
     
     func fetchUniversity() async throws -> [Model] {
         let url = URL(string: "https://rickandmortyapi.com/api/character")!
-        let (data, response) = try await URLSession.shared.data(from: url)
+        let config = URLSessionConfiguration.ephemeral
+        let (data, response) = try await URLSession(configuration: config).data(from: url)
         
         guard let response = response as? HTTPURLResponse,
               response.statusCode == 200 else {
