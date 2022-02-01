@@ -8,9 +8,35 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @StateObject private var viewModel = ViewModel(service: Service())
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        
+        NavigationView {
+            
+            switch viewModel.state {
+                
+            case .success(let data):
+                List {
+                    ForEach(data, id: \.id) { item in
+                        VStack {
+                            Text("\(item.name)")
+                        }
+                    }
+                }
+                .navigationTitle("Characters")
+                
+            case .loading:
+                ProgressView()
+                
+            default:
+                EmptyView()
+            }
+            
+        }.task {
+            await viewModel.getUniversity()
+        }
     }
 }
 

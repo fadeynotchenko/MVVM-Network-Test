@@ -7,22 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		432FDE6327A932AF00E43B35 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 432FDE6227A932AF00E43B35 /* ViewModel.swift */; };
 		4357FF4C27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357FF4B27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift */; };
 		4357FF4E27A85AC000870FEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357FF4D27A85AC000870FEE /* ContentView.swift */; };
 		4357FF5027A85AC000870FEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4357FF4F27A85AC000870FEE /* Assets.xcassets */; };
 		4357FF5327A85AC000870FEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4357FF5227A85AC000870FEE /* Preview Assets.xcassets */; };
-		4357FF5B27A85AE200870FEE /* University.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357FF5A27A85AE200870FEE /* University.swift */; };
-		4357FF5E27A85B9C00870FEE /* UniversityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357FF5D27A85B9C00870FEE /* UniversityService.swift */; };
+		4357FF5B27A85AE200870FEE /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357FF5A27A85AE200870FEE /* Model.swift */; };
+		4357FF5E27A85B9C00870FEE /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4357FF5D27A85B9C00870FEE /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		432FDE6227A932AF00E43B35 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		432FDE6427A938DE00E43B35 /* MVVM-Network-Test-Project-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "MVVM-Network-Test-Project-Info.plist"; sourceTree = SOURCE_ROOT; };
 		4357FF4827A85ABF00870FEE /* MVVM Network Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM Network Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4357FF4B27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_Network_Test_ProjectApp.swift; sourceTree = "<group>"; };
 		4357FF4D27A85AC000870FEE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4357FF4F27A85AC000870FEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4357FF5227A85AC000870FEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4357FF5A27A85AE200870FEE /* University.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = University.swift; sourceTree = "<group>"; };
-		4357FF5D27A85B9C00870FEE /* UniversityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversityService.swift; sourceTree = "<group>"; };
+		4357FF5A27A85AE200870FEE /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		4357FF5D27A85B9C00870FEE /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		432FDE6127A9329800E43B35 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				432FDE6227A932AF00E43B35 /* ViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		4357FF3F27A85ABF00870FEE = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +66,8 @@
 		4357FF4A27A85ABF00870FEE /* MVVM Network Test Project */ = {
 			isa = PBXGroup;
 			children = (
+				432FDE6427A938DE00E43B35 /* MVVM-Network-Test-Project-Info.plist */,
+				432FDE6127A9329800E43B35 /* View Model */,
 				4357FF5C27A85B8400870FEE /* Service */,
 				4357FF5927A85AC800870FEE /* Model */,
 				4357FF4B27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift */,
@@ -76,7 +89,7 @@
 		4357FF5927A85AC800870FEE /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4357FF5A27A85AE200870FEE /* University.swift */,
+				4357FF5A27A85AE200870FEE /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -84,7 +97,7 @@
 		4357FF5C27A85B8400870FEE /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				4357FF5D27A85B9C00870FEE /* UniversityService.swift */,
+				4357FF5D27A85B9C00870FEE /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -160,9 +173,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4357FF4E27A85AC000870FEE /* ContentView.swift in Sources */,
-				4357FF5E27A85B9C00870FEE /* UniversityService.swift in Sources */,
+				432FDE6327A932AF00E43B35 /* ViewModel.swift in Sources */,
+				4357FF5E27A85B9C00870FEE /* Service.swift in Sources */,
 				4357FF4C27A85AC000870FEE /* MVVM_Network_Test_ProjectApp.swift in Sources */,
-				4357FF5B27A85AE200870FEE /* University.swift in Sources */,
+				4357FF5B27A85AE200870FEE /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,6 +309,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MVVM Network Test Project/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MVVM-Network-Test-Project-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -323,6 +338,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MVVM Network Test Project/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "MVVM-Network-Test-Project-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

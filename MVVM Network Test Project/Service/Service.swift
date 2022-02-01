@@ -7,24 +7,24 @@
 
 import Foundation
 
-struct UniversityService {
+struct Service {
     
-    enum UniversityServiceError: Error {
+    enum ServiceError: Error {
         case failed
         case failedDecode
         case invalidStatusCode
     }
     
-    func fetchUniversity() async throws -> [University] {
-        let url = URL(string: "http://universities.hipolabs.com/search?country=United+States")!
+    func fetchUniversity() async throws -> [Model] {
+        let url = URL(string: "https://rickandmortyapi.com/api/character")!
         let (data, response) = try await URLSession.shared.data(from: url)
         
         guard let response = response as? HTTPURLResponse,
               response.statusCode == 200 else {
-                  throw UniversityServiceError.invalidStatusCode
+                  throw ServiceError.invalidStatusCode
               }
         
-        let decodedData = try JSONDecoder().decode(UniversityServiceResult.self, from: data)
+        let decodedData = try JSONDecoder().decode(ServiceResult.self, from: data)
         return decodedData.results
     }
 }

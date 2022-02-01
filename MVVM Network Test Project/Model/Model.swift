@@ -5,12 +5,13 @@
 //  Created by Fadey Notchenko on 31.01.2022.
 //
 
-struct UniversityServiceResult: Codable {
-    let results: [University]
+struct ServiceResult: Codable {
+    let results: [Model]
     
 }
 
-struct University: Codable {
+struct Model: Codable {
     let id: Int
     let name: String
+    let status: String
 }
