@@ -21,15 +21,18 @@ struct ContentView: View {
                 List {
                     ForEach(data, id: \.id) { item in
                         HStack {
-                            AsyncImage(url: URL(string: item.image), scale: 2.0) { image in
-                                image
-                            } placeholder: {
-                                Image(systemName: "photo")
-                                    .scaledToFit()
-                                    .frame(width: 200, height: 200)
-                                    .clipped()
+                            NavigationLink(destination: {
+                                SecondView(data: item)
+                            }) {
+                                AsyncImage(url: URL(string: item.image)!) { image in
+                                    image.resizable()
+                                } placeholder: {
+                                    ProgressView()
+                                }
+                                .frame(width: 100, height: 100)
+                                
+                                Text("\(item.name)")
                             }
-                            Text("\(item.name)")
                         }
                         .padding()
                         
@@ -45,13 +48,13 @@ struct ContentView: View {
             }
             
         }.task {
-            await viewModel.getUniversity()
+            await viewModel.getData()
         }
         .alert("Erorr", isPresented: $viewModel.hasErrors, presenting: viewModel.state) { detail in
             
             Button("Retry") {
                 Task {
-                    await viewModel.getUniversity()
+                    await viewModel.getData()
                 }
             }
             

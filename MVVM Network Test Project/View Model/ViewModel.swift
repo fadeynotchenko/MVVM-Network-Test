@@ -26,12 +26,12 @@ class ViewModel: ObservableObject {
     @Published private(set) var state: State = .na
     @Published var hasErrors: Bool = false
     
-    func getUniversity() async {
+    func getData() async {
         self.state = .loading
         
         do {
-            let universities = try await service.fetchUniversity()
-            self.state = .success(data: universities)
+            let data = try await service.fetchData()
+            self.state = .success(data: data)
         } catch {
             self.state = .failed(error: error)
             self.hasErrors = true
